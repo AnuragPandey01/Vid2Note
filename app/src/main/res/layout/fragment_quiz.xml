@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.quiz.QuizFragment"
+    android:fillViewport="true"
+    android:orientation="vertical"
     android:padding="24sp">
 
     <androidx.appcompat.widget.LinearLayoutCompat

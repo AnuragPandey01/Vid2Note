@@ -36,6 +36,7 @@ class NoteViewModel @Inject constructor(
                     )
                 )
                 _state.value = NoteViewModelState.Success(res)
+                _state.value = NoteViewModelState.Idle
             }catch (e: Exception){
                 _state.value = NoteViewModelState.Error(e.message ?: "An error occurred")
             }

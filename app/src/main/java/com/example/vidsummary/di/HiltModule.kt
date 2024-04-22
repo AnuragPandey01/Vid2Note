@@ -1,9 +1,12 @@
 package com.example.vidsummary.di
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.vidsummary.data.api.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -17,8 +20,12 @@ class HiltModule {
 
     @Provides
     @Singleton
-    fun providesOkHttpClient(): OkHttpClient {
+    fun providesOkHttpClient(
+        @ApplicationContext
+        context : Context
+    ): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(ChuckerInterceptor(context))
             .readTimeout(2,TimeUnit.MINUTES)
             .connectTimeout(2,TimeUnit.MINUTES)
             .writeTimeout(2,TimeUnit.MINUTES)

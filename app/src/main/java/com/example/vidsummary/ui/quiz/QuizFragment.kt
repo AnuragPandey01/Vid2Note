@@ -5,11 +5,12 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.vidsummary.R
 import com.example.vidsummary.databinding.FragmentQuizBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class QuizFragment : Fragment() {
+class QuizFragment : Fragment(R.layout.fragment_quiz) {
 
     private var _binding: FragmentQuizBinding? = null
     private val binding get() = _binding!!

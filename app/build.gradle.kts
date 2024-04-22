@@ -68,5 +68,8 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.cookiebar2)
 
+    debugImplementation (libs.chucker)
+    releaseImplementation (libs.chucker.no.op)
+
 
 }

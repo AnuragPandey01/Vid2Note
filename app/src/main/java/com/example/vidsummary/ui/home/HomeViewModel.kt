@@ -24,6 +24,7 @@ class HomeViewModel @Inject constructor(
             try{
                 val res = apiService.getNotes(NotesRequest(url))
                 _state.value = HomeState.Success(res)
+                _state.value = HomeState.Idle
             }catch (e:Exception){
                 _state.value = HomeState.Error(e.message ?: "An error occurred")
             }
